@@ -35,11 +35,10 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 <script>
-
     var firebaseRef = firebase.database().ref();
 
     class Card {
-        constructor(title, content, image ) {
+        constructor(title, content, image) {
             var announcement_title = "<h2 class='card__title id='announcement_title'>" + title +
                 "</h2>";
             var announcement_text = "<div class='card__content' id='announcement_content'>" + content +
@@ -54,7 +53,7 @@
     }
 
     function updateCards() {
-        
+
         var cardItems = firebase.ref.length;
 
         for (var i = 0; i < cardItems; i++) {
@@ -63,7 +62,6 @@
             document.body.insertBefore(card.content, currentDiv)
         }
     }
-
 </script>
 
 </html>
