@@ -1,8 +1,35 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+
+<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
 <html>
   <head>
+    <script src="splashjs.js"></script>
+    
     <meta charset="UTF-8">
     <title>Sample FirebaseUI App</title>
+    <ons-page>
+  
+        <div style="text-align: center; margin-top: 30px;">
+          <p style="margin-top: 30px;">
+            <ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>
+            
+          </p>
+          <pstyle="margin-top: 200px;">
+              <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+          </p>
+        
+          <p style="margin-top: 30px;">
+            <ons-button onclick = "login()" id="signin">Sign in</ons-button>
+            
+          </p>
+          <p style="margin-top: 30px;">
+            <ons-button style="background-color: rgb(255, 153, 0);">Continue with Google </ons-button>
+          </p>
+        </div>
+      </ons-page>
     <!-- *******************************************************************************************
        * TODO(DEVELOPER): Paste the initialization snippet from:
        * Firebase Console > Overview > Add Firebase to your web app. *
@@ -55,4 +82,31 @@
     <div id="sign-in"></div>
     <div id="account-details"></div>
   </body>
+
+  <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
+  </body>
 </html>
+
+
