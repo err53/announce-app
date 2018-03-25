@@ -1,4 +1,16 @@
-const firebase = require("firebase");
+<div class="submit_form_group">
+    <form class="submit_form" action="submit()">
+    <span>Announcment Title:</span>
+    <input type="text" class="title_input">
+    <span>Text</span>
+    <input type="text" class="text_input">
+    <span>Upload an Image</span>
+    <input type="image" class="image_input">
+    </form>
+</div>
+
+<script>
+    const firebase = require("firebase");
 // Required for side-effects
 require("firebase/firestore");
  // Initialize Firebase
@@ -134,6 +146,8 @@ function submitAnnouncement() {
           // Upload completed successfully, now we can get the download URL
           var downloadURL = uploadTask.snapshot.downloadURL;
           console.log("The download URL: "+downloadURL);
+
+          var title_input = document.
           
           //this is where you have to enter the code to update any desired firebase table with the image url
           //eg this below code will add a 'profilePhoto' field and record to 'users' table for the user with the id of userId
@@ -158,3 +172,4 @@ function submitAnnouncement() {
         }, 0);
         }
 }
+</script>
