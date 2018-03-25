@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head>
+<body>
+    <div style="height: fit-content; padding: 1px 0 0 0;">
+        <div class="card card_has_image">
+          <h2 class="card__title" id="annoucement_title"></h2>
+          <div class="card__content" id="announcement_text"></div>
+          <img class="card__image" id="anouncement_image"></img>
+        </div>
+      </div>
+</body>
+
+<script>
+    function updateCards() {
+        var announcement_title = firebase.ref.title;
+        var announcement_text = firebase.ref.text;
+        var announcement_image = firbase.ref.image;
+
+        var card;
+        var cardItems = firebase.ref.length;
+
+        for(var i = 0; i < cardItems; i++) {
+        card = document.createElement('div');
+        card.id = i;
+        var cardHTML = announcement_title + announcement_text + announcement_image;
+        document.getElementById(card.id).innerText = cardHTML;
+        }   
+    }
+</script>
+</html>

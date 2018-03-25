@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+      <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+      <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    </head> 
+    
+    <body>
+        <div id ="content"> </div>
+        <div class="tabbar">
+          <label class="tabbar__item">
+            <input type="radio" name="tabbar-a" onclick="load_menu();">
+            <button class="tabbar__button">
+              <i class="tabbar__icon ion-gear-a"></i>
+            </button>
+          </label>
+
+          <label class="tabbar__item">
+            <input type="radio" name="tabbar-a" checked="checked" onclick="load_feed();">
+            <button class="tabbar__button">
+              <i class="tabbar__icon ion-home"></i>
+            </button>
+          </label>
+
+          <label class="tabbar__item">
+            <input type="radio" name="tabbar-a" onclick="load_add();">
+            <button class="tabbar__button">
+              <i class="tabbar__icon ion-plus-circled"></i>
+            </button>
+          </label>
+        </div>
+    </body>
+    
+    <script>
+        function load_menu() {
+            document.getElementById("content").innerHTML='<object type="text/html" data="menu.html" ></object>';
+        }
+        function load_feed() {
+            document.getElementById("content").innerHTML='<object type="text/html" data="feed.html" ></object>';
+        }
+        function load_add() {
+            document.getElementById("content").innerHTML='<object type="text/html" data="add.html" ></object>';
+        }
+    </script>
+    
+</html>
