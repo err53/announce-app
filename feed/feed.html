@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
 </head>
+
 <body>
     <div style="height: fit-content; padding: 1px 0 0 0;">
         <div class="cards" id="card_container">
-                <h2 class="card__title"></h2>
-                <div class="card__content"></div>
-                <img class="card__image" id="announcement_image" href="">
+            <h2 class="card__title"></h2>
+            <div class="card__content"></div>
+            <img class="card__image" id="announcement_image" href="">
         </div>
-      </div>
+    </div>
 </body>
 
 
 <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBqN991666086dvKsHemsFilZovBulmDQo",
-    authDomain: "announcely.firebaseapp.com",
-    databaseURL: "https://announcely.firebaseio.com",
-    projectId: "announcely",
-    storageBucket: "announcely.appspot.com",
-    messagingSenderId: "94581307375"
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBqN991666086dvKsHemsFilZovBulmDQo",
+        authDomain: "announcely.firebaseapp.com",
+        databaseURL: "https://announcely.firebaseio.com",
+        projectId: "announcely",
+        storageBucket: "announcely.appspot.com",
+        messagingSenderId: "94581307375"
+    };
+    firebase.initializeApp(config);
 </script>
 
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script>
-    
     function updateCards() {
         var announcement_title = "<h2 class='card__title id='announcement_title'>" + firebase.ref.title + "</h2>";
-        var announcement_text = "<div class='card__content' id='announcement_content'>"+ firebase.ref.content + "</div>";
-        var announcement_image = "<img class='card__image' id='annoucement_image'src="+ firebase.ref.image +">";
-        
+        var announcement_text = "<div class='card__content' id='announcement_content'>" + firebase.ref.content + "</div>";
+        var announcement_image = "<img class='card__image' id='annoucement_image'src=" + firebase.ref.image + ">";
+
         var card;
         var cardItems = firebase.ref.length;
 
-        for(var i = 0; i < cardItems; i++) {
-        card = document.createElement('div');
-        card.id = i;
-        card.class="cardItem_main";
-        var cardHTML = announcement_title + announcement_text + announcement_image;
-        document.getElementById(card.id).innerText = cardHTML;
-        }   
+        for (var i = 0; i < cardItems; i++) {
+            card = document.createElement('div');
+            card.id = i;
+            card.class = "cardItem_main";
+            var cardHTML = announcement_title + announcement_text + announcement_image;
+            document.getElementById(card.id).innerText = cardHTML;
+        }
     }
 </script>
 </html>
