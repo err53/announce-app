@@ -11,6 +11,7 @@
 - Transit route delay announcements
 
 ## To-Do (**Bold** is more important, *Italics* is less important)
+- [x] Challenge Statement
 - [ ] Splash Screen
 - [ ] Nav UI
 - [ ] First Run
