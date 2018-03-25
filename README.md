@@ -13,9 +13,11 @@
 ## To-Do (**Bold** is more important, *Italics* is less important)
 - [x] Challenge Statement
 - [ ] Splash Screen
-- [ ] Nav UI
+- [x] Nav UI
 - [ ] First Run
   - [ ] Login
+    - [x] Page
+    - [ ] Funcionality
   - [ ] Sign Up
   - [ ] Add Group Code
   - [ ] Interest Selection
