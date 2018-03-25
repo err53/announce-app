@@ -35,7 +35,9 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 <script>
-    
+
+    var firebaseRef = firebase.database().ref();
+
     class Card {
         constructor(title, content, image ) {
             var announcement_title = "<h2 class='card__title id='announcement_title'>" + title +
@@ -44,21 +46,24 @@
                 "</div>";
             var announcement_image = "<img class='card__image' id='annoucement_image'src=" + image +
                 ">";
-            var card = document.createElement('div');
+            var content = document.createElement('div');
 
             var cardHTML = announcement_title + announcement_text + announcement_image;
-            card[i].innerHTML = cardHTML;
+            content.appendChild(cardHTML);
         }
     }
 
     function updateCards() {
-        let card = new card()[];
+        
         var cardItems = firebase.ref.length;
 
         for (var i = 0; i < cardItems; i++) {
-            card.push(firebase.ref.title, firebase.ref.content, firebase.ref.image);
+            let card = new card(firebaseRef.title, firebaseRef.content, firebaseRef.image);
+            var currentDiv = document.getElementById("card_container")
+            document.body.insertBefore(card.content, currentDiv)
         }
     }
+
 </script>
 
 </html>
