@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
@@ -31,11 +32,13 @@
     firebase.initializeApp(config);
 </script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 <script>
     function updateCards() {
         var announcement_title = "<h2 class='card__title id='announcement_title'>" + firebase.ref.title + "</h2>";
-        var announcement_text = "<div class='card__content' id='announcement_content'>" + firebase.ref.content + "</div>";
+        var announcement_text = "<div class='card__content' id='announcement_content'>" + firebase.ref.content +
+            "</div>";
         var announcement_image = "<img class='card__image' id='annoucement_image'src=" + firebase.ref.image + ">";
 
         var card;
@@ -50,4 +53,5 @@
         }
     }
 </script>
+
 </html>
