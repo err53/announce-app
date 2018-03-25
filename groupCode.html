@@ -1,32 +1,35 @@
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="groupCode.css">
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="groupCode.css">
+</head>
 
 <html>
-<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBqN991666086dvKsHemsFilZovBulmDQo",
-    authDomain: "announcely.firebaseapp.com",
-    databaseURL: "https://announcely.firebaseio.com",
-    projectId: "announcely",
-    storageBucket: "announcely.appspot.com",
-    messagingSenderId: "94581307375"
-  };
-  firebase.initializeApp(config);
-</script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBqN991666086dvKsHemsFilZovBulmDQo",
+            authDomain: "announcely.firebaseapp.com",
+            databaseURL: "https://announcely.firebaseio.com",
+            projectId: "announcely",
+            storageBucket: "announcely.appspot.com",
+            messagingSenderId: "94581307375"
+        };
+        firebase.initializeApp(config);
+    </script>
 
-<ons-page id = "groupCodePage">>
-    <script src = "groupCode.js" > </script>
-  <div style="text-align: center; margin-top: 200px;">
-    <p>
-      <ons-input id="groupCode" modifier="underbar" type="groupCode" placeholder="Group Code" float></ons-input>
-    </p>
-    <p style="margin-top: 30px;">
-      <ons-button onclick="login()" ripple = "true" style = "background-color: rgb(100, 100, 255);">Submit</ons-button>
-    </p>
-  </div>
-</ons-page>
+    <ons-page id = "groupCodePage">>
+        <script src = "groupCode.js" > </script>
+        <div style="text-align: center; margin-top: 200px;">
+            <p>
+                <ons-input id="groupCode" modifier="underbar" type="groupCode" placeholder="Group Code" float></ons-input>
+            </p>
+            <p style="margin-top: 30px;">
+                <ons-button onclick="login()" ripple = "true" style = "background-color: rgb(100, 100, 255);">Submit</ons-button>
+            </p>
+        </div>
+    </ons-page>
 </html>
