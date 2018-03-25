@@ -2,12 +2,33 @@
 <html>
     <head>
       <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+      <link rel="stylesheet" href="./tab.css">
       <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
       <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     </head> 
     
     <body>
+        <div class="toolbar">
+            
+          <div class="toolbar__left">
+              <select class="select-input" style="font-size:1.1em; color: dodgerblue; vertical-align:-6px;">
+                <option class="navbar_selector">General</option>
+                <option class="navbar_selector">JFSS</option>
+                <option class="navbar_selector">Brampton</option>
+              </select>
+            </div>
+
+            <div class="toolbar__center"></div>
+          <div class="toolbar__right">
+            <span class="toolbar-button">
+              <i class="ion-ios-information" style="font-size:32px; vertical-align:-6px;"></i>
+              </span>
+            </div>
+            
+        </div>
+        
         <div id ="content"> </div>
+        
         <div class="tabbar">
           <label class="tabbar__item">
             <input type="radio" name="tabbar-a" onclick="load_menu();">
