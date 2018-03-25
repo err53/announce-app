@@ -7,10 +7,8 @@
 </head>
 <body>
     <div style="height: fit-content; padding: 1px 0 0 0;">
-        <div class="card card_has_image">
-          <h2 class="card__title" id="annoucement_title"></h2>
-          <div class="card__content" id="announcement_text"></div>
-          <img class="card__image" id="anouncement_image"></img>
+        <div class="cards" id="card_container">
+
         </div>
       </div>
 </body>
@@ -27,8 +25,10 @@
         for(var i = 0; i < cardItems; i++) {
         card = document.createElement('div');
         card.id = i;
+        card.class="cardItem_main";
         var cardHTML = announcement_title + announcement_text + announcement_image;
         document.getElementById(card.id).innerText = cardHTML;
+        document.getElementById("card_container").appendChild(card)
         }   
     }
 </script>
